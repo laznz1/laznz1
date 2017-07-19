@@ -1,0 +1,313 @@
+﻿/*** BooStrap Overrides ***/
+
+/* Better Padding */
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*** Custom CSS ***/
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #333333;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+h2 {
+    color: #DD1122;
+    font-weight: 600;
+}
+
+h3 {
+    color: #FF6A13;
+    font-weight: 600;
+}
+
+#navBar {
+    background-color: #DD1122;
+    width: 100%;
+    z-index: 20;
+    position: fixed;
+    box-shadow: black 0px 0px 10px 1px;
+    color: #FFFFFF;
+    align-items: center;
+    top: 0;
+    transition: all linear 0.5s;
+}
+
+
+
+    #navBar h1, #navBarBurger i, #navBarLogo img {
+        text-align: center;
+        margin: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 5vw;
+    }
+
+#navBarBurger {
+    text-align: center;
+    cursor: pointer;
+    line-height: 0;
+}
+
+#navBarLogo img {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navBarLogo, #navBarBurger {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#navBarAnchor {
+    position: relative;
+    box-shadow: none;
+    background-color: #efd900;
+}
+
+#SideBarAnchor {
+    padding: 10px;
+    width: 30%;
+}
+
+#navSide {
+    padding-left: 0;
+    padding-right: 0;
+    height: 100%;
+    transition: width 0.35s ease;
+    overflow-y: auto;
+}
+
+    #navSide.collapsing {
+        width: 0;
+        height: auto;
+    }
+
+#navSide {
+    position: fixed;
+    box-shadow: black 0px 2px 20px 2px;
+    text-shadow: 1px -1px 1px #808080;
+    background-color: #DD1122;
+    color: #FFFFFF;
+    text-align: right;
+    font-size: 1.5em;
+    z-index: 10;
+}
+
+
+    #navSide a:not(#sideBarLogo), #navSide .navCollapse {
+        color: inherit;
+        font-style: inherit;
+        font-weight: 500;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+    }
+
+    #navSide h1 {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.25em;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    #navSide #sideBarLogo img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding: 20px;
+        width: 80%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    #navSide #navProjects {
+        background-color: #333333;
+        box-shadow: -2px 1px 4px 0px;
+    }
+
+        #navSide #navProjects a {
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+    #navSide .navCollapse:before {
+        font-family: FontAwesome;
+        content: "\f054 ";
+        display: inline-block;
+        transition: transform 0.5s;
+        font-size: 0.75em;
+        padding: 5px;
+    }
+
+    #navSide .navCollapse[aria-expanded="true"]:before {
+        transform: rotate(90deg);
+    }
+
+    #navSide .navCollapse:hover {
+        text-decoration: underline;
+    }
+
+#mainBody {
+    padding: 0 15px;
+}
+
+    #mainBody div {
+        transition: all linear 0.25s;
+    }
+
+.memberBlock {
+}
+
+
+    .memberBlock img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .memberBlock h4 {
+        text-align: center;
+    }
+
+    .memberBlock dt {
+        margin-top: 5px;
+    }
+
+/* Large */
+@media (min-width: 1200px) {
+    .memberBlock.col-lg-4:nth-child(3n+2) {
+        clear: both;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .memberBlock.col-md-6:nth-child(2n+2) {
+        clear: both;
+    }
+}
+
+/* Small */
+@media (min-width: 768px) and (max-width: 991px) {
+    #navBar {
+        display: flex !important;
+    }
+
+    #navSide {
+        background-color: #333333;
+    }
+
+    .memberBlock.col-md-6:nth-child(2n+2) {
+        clear: both;
+    }
+}
+
+/* Special Formatting for Subtext to bootstrap-select dropdowns */
+.bootstrap-select .text {
+    width: 100%;
+    margin-right: 0 !important;
+}
+
+.bootstrap-select .text-muted {
+    float: right;
+    position: relative;
+    right: 15px;
+}
+/* End Special Formatting for Subtext to bootstrap-select dropdowns */
+
+#contactForm > div {
+    padding: 0 15px;
+}
+
+#contactForm .submit {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+#contactForm #inputMessage {
+    resize: vertical;
+}
+
+
+#contactForm label[required]::after, .redAst::after {
+    content: " *";
+    font-weight: bold;
+    color: red;
+}
+
+#inputSignatureCanvas canvas {
+    height: 108px;
+    padding: 0;
+}
+
+#inputSignatureCanvas button {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+}
+
+
+
+/* Extra-Small */
+@media (max-width: 767px) {
+    #navBar {
+        display: flex !important;
+    }
+
+    #navSide {
+        background-color: #333333;
+    }
+}
+
+.carousel {
+    box-shadow: #333333 0px 0px 2px 2px;
+    margin-top: 20px;
+}
+
+    .carousel .item img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .carousel .carousel-caption hw, .carousel .carousel-caption p {
+        text-shadow: black 1px 1px 1px;
+    }
+
+    .carousel .carousel-control {
+        background-image: none;
+    }
+
+    .carousel .carousel-indicators li {
+        box-shadow: #666666 0 0 1px 1px;
+    }

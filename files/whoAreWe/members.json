@@ -1,0 +1,117 @@
+{
+  "2017 - Inaugural Council": [
+    {
+      "Name": "Laurence Earl",
+      "Titles": [ "Chairperson", "Academic Board Rep" ],
+      "Contact": {
+        "Phone": "021 266 0312",
+        "Email": "earl26@manukaumail.com",
+        "LinkedIn": "https://www.linkedin.com/in/laurenceearl/"
+      },
+      "Term": {
+        "Start": "April 2017",
+        "End": "Present"
+      },
+      "Image": "earl26.png"
+    },
+    {
+      "Name": "Aayla Peebles",
+      "Titles": [ "Deputy Chairperson", "Academic Board Rep" ],
+      "Contact": {
+        "Email": "peeb11@manukaumail.com",
+        "LinkedIn": "https://www.linkedin.com/in/aaylapeebles/"
+      },
+      "Term": {
+        "Start": "April 2017",
+        "End": "Present"
+      },
+      "Image": "peeb11.png"
+    },
+    {
+      "Name": "Kirsten Jury",
+      "Titles": [ "Secretary" ],
+      "Contact": {
+        "Email": "jury56@manukaumail.com",
+        "LinkedIn": "https://www.linkedin.com/in/kirsten-jury-99019211/"
+      },
+      "Term": {
+        "Start": "April 2017",
+        "End": "Present"
+      },
+      "Image": "jury56.png"
+    },
+    {
+      "Name": "Jess Petersen",
+      "Titles": [ "Full Member", "Student Executive Voice - Under 25s Rep" ],
+      "Contact": {
+        "Email": "pete508@manukaumail.com",
+        "LinkedIn": "https://www.linkedin.com/in/jessica-petersen-a8a65774/"
+      },
+      "Term": {
+        "Start": "April 2017",
+        "End": "Present"
+      },
+      "Image": "pete508.png"
+    },
+    {
+      "Name": "Connor McCormick",
+      "Titles": [ "Full Member", "Student Executive Voice - LGBT Rep" ],
+      "Contact": {
+        "Phone": "022 076 8001",
+        "Email": "mcco290@manukaumail.com",
+        "LinkedIn": "https://www.linkedin.com/in/connormccormicknz/"
+      },
+      "Term": {
+        "Start": "April 2017",
+        "End": "Present"
+      },
+      "Image": "mcco290.png"
+    },
+    {
+      "Name": "Gurdeep Singh",
+      "Titles": [ "Full Member", "Student Executive Voice - FOBIT Rep" ],
+      "Contact": {
+        "Email": "sing3926@manukaumail.com",
+        "LinkedIn": "https://www.linkedin.com/in/gurdeep-singh-gilbert-110ba9122/"
+      },
+      "Term": {
+        "Start": "April 2017",
+        "End": "Present"
+      },
+      "Image": "sing3926.png"
+    },
+    {
+      "Name": "Chrissy Bell",
+      "Titles": [ "Full Member" ],
+      "Contact": {
+        "Email": "bell499@manukaumail.com"
+      },
+      "Term": {
+        "Start": "April 2017",
+        "End": "Present"
+      },
+      "Image": "bell499.png"
+    },
+    {
+      "Name": "Meliana Ngata",
+      "Titles": [ "Full Member" ],
+      "Contact": {
+        "Email": "ngat262@manukaumail.com"
+      },
+      "Term": {
+        "Start": "April 2017",
+        "End": "Present"
+      },
+      "Image": "ngat262.png"
+    },
+    {
+      "Name": "Tasha Hohaia",
+      "Titles": [ "Student Voice & Advocacy Facilitator" ],
+      "Contact": {
+        "Email": "Tasha.Hohaia@manukau.ac.nz",
+        "LinkedIn": "https://www.linkedin.com/in/tashahohaia/"
+      },
+      "Image": "TashaHohaia.png"
+    }
+  ]
+}

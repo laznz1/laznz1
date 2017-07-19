@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact Us - Student Council</title>
+
+  <!-- Imports: JQuery, Bootstrap, Font-Awesome, Poppins (Google Fonts), Favicon -->
+  <script src="scripts/jquery-3.1.1.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <link href="content/bootstrap.min.css" rel="stylesheet" />
+  <link href="content/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <!-- Specifically for Contact Page (or wherever using select dropdowns) -->
+  <script src="scripts/bootstrap-select.min.js"></script>
+  <link href="content/bootstrap-select.min.css" rel="stylesheet" />
+
+  <link type="text/css" rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload="onLoad();">
+  <div id="container">
+
+    <!-- Look into better way of handling Reusable code. Client-Side XSS is a terrible idea. -->
+
+    <script id="testNav">sharedResource('#testNav', 'nav.html');</script>
+
+    <!-- End Navigation for Re-Use -->
+
+    <div id="mainBody" class="col-lg-10 col-md-10 col-sm-12 col-xs-12 pull-right container">
+      <div id="col1" class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Contact Us</h1>
+        <h2>Feedback and Opinion Form</h2>
+
+        <!-- Contact Form -->
+        <form id="contactForm" action="https://wevmit01.azurewebsites.net/formtest.cshtml" method="post" onsubmit="return formProcess(this)">
+
+          <div class="alert alert-warning alert-dismissable fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <b>Notice:</b> Fields marked with a <span class="redAst"></span> are required
+          </div>
+
+          <!-- Name -->
+          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <label required for="inputStudentName">Your Name</label>
+            <!--<input required type="text" class="form-control" id="inputStudentName" name="inputStudentName" placeholder="Enter your full name" />-->
+            <input required type="text" class="form-control" id="inputStudentName" placeholder="Enter your full name" />
+          </div>
+
+          <!-- Recipient -->
+          <div class="form-group col-lg-6 col-md-12 col-sm-6 col-xs-12">
+            <label required for="inputRecipient">Recipient</label>
+            <!--<select required class="selectpicker form-control inputRecipient" id="inputRecipient" name="inputRecipient" title="Please choose a recipient"  data-live-search="true" data-show-subtext="true">
+              <optgroup label="General">
+                <option value="StudentCouncil@Manukau.ac.nz">Student Council General</option>
+              </optgroup>
+              <optgroup label="Current Members" id="RecipientMembersList">
+              </optgroup>
+            </select>-->
+            <select required class="selectpicker form-control inputRecipient" id="inputRecipient" title="Please choose a recipient" data-live-search="true" data-show-subtext="true">
+              <optgroup label="General">
+                <option value="StudentCouncil@Manukau.ac.nz">Student Council General</option>
+              </optgroup>
+              <optgroup label="Current Members" id="RecipientMembersList"></optgroup>
+            </select>
+
+            <script>contactMembersList('#RecipientMembersList', '.inputRecipient');</script>
+          </div>
+
+          <!-- Carbon Copy -->
+          <div class="form-group col-lg-6 col-md-12 col-sm-6 col-xs-12">
+            <label for="inputCC">Carbon Copy</label>
+            <!--<select multiple class="selectpicker form-control inputCC" id="inputCC" name="inputCC" title="Please choose recipients" data-live-search="true">
+              <optgroup label="General">
+                <option value="StudentCouncil@Manukau.ac.nz">Student Council General</option>
+              </optgroup>
+              <optgroup label="Current Members" id="CCMembersList" data-max-options="3" data-max-options-text="Please limit your selection to 3 Members."></optgroup>
+            </select>-->
+            <select multiple class="selectpicker form-control inputCC" id="inputCC" title="Please choose recipients" data-live-search="true">
+              <optgroup label="General">
+                <option value="StudentCouncil@Manukau.ac.nz">Student Council General</option>
+              </optgroup>
+              <optgroup label="Current Members" id="CCMembersList" data-max-options="3" data-max-options-text="Please limit your selection to 3 Members."></optgroup>
+            </select>
+            <script>contactMembersList('#CCMembersList', '.inputCC');</script>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group col-lg-6 col-md-12 col-sm-6 col-xs-12">
+            <label required for="inputStudentEmail">Your Manukau Email Address</label>
+            <!--<input required type="email" class="form-control" id="inputStudentEmail" name="inputStudentEmail" placeholder="Enter your Manukau email" pattern="[a-zA-z0-9.]+@manukau(.ac.nz|mail.com)" title="This must be a Manukaumail.com or a Manukau.ac.nz email address." />-->
+            <input required type="email" class="form-control" id="inputStudentEmail" placeholder="Enter your Manukau email" pattern="[a-zA-z0-9.]+@manukau(.ac.nz|mail.com)" title="This must be a Manukaumail.com or a Manukau.ac.nz email address." />
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group col-lg-6 col-md-12 col-sm-6 col-xs-12">
+            <label for="inputStudentPhone">Your Phone Number</label>
+            <!--<input type="tel" class="form-control" id="inputStudentPhone" name="inputStudentPhone" placeholder="Enter your Phone Number" title="Phone Numbers must be at least 7 characters and may include '#', '*', '+' and Spaces." pattern="[0-9#*+ ]{7,}" />-->
+            <input type="tel" class="form-control" id="inputStudentPhone" placeholder="Enter your Phone Number" title="Phone Numbers must be at least 7 characters and may include '#', '*', '+' and Spaces." pattern="[0-9#*+ ]{7,}" />
+          </div>
+
+          <!-- Message Content-->
+          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <label required for="inputMessage">Message Content</label>
+            <!--<textarea required class="form-control" rows="10" id="inputMessage" name="inputMessage"></textarea>-->
+            <textarea required class="form-control" rows="10" id="inputMessage"></textarea>
+          </div>
+
+          <!-- Submit Button-->
+          <div class="submit form-group col-lg-6 col-md-6 col-sm-6 col-xs-10">
+            <button type="submit" class="form-control col-lg-6 btn-default">Submit</button>
+          </div>
+
+          <script>
+            // Contact Form specific JS
+
+            // On a Primary Recipient being selected
+            $('#inputRecipient').on('changed.bs.select', function (e) {
+              $('select.inputCC option').removeAttr("disabled");
+              $("select.inputCC [value='" + $('select.inputRecipient').val() + "']").attr("disabled", true);
+
+              // This line helps ensure that the bootstrap-select Carbon Copy selector doesn't have the Recipient selected.
+              // Making the Value disabled in the selector automatically deselects it in the hidden selector, but not in the fancy bootstrap-select dropdown.
+              $('.inputCC').selectpicker('val', $('select.inputCC').val());
+              $('.inputCC').selectpicker('refresh');
+            });
+          </script>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

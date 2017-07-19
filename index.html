@@ -1,266 +1,145 @@
-<!DOCTYPE html>
-<html>
-<title>MIT - Student Council</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-body {font-size:16px;}
-.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
-.w3-half img:hover{opacity:1}
-</style>
-<body>
+ï»¿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home - Student Council</title>
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-  <div class="w3-container">
-    <h3 class="w3-padding-64"><b>Manukau Institute of Technolgy<br>Student Council</b></h3>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
-    <a href="#Ongoing-Projects" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Ongoing Projects</a> 
-    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services</a> 
-    <a href="#Members" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Members</a> 
-	<a href="#Minutes" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Minutes</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
-  </div>
-</nav>
+  <!-- Imports: JQuery, Bootstrap, Font-Awesome, Poppins (Google Fonts), Favicon -->
+  <script src="scripts/jquery-3.1.1.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <link href="content/bootstrap.min.css" rel="stylesheet" />
+  <link href="content/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.ico">
 
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">?</a>
-  <span>Manukau Institute of Technolgy Student Council</span>
-</header>
+  <link type="text/css" rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js"></script>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload="onLoad();">
+  <div id="container">
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <!-- Look into better way of handling Reusable code. Client-Side XSS is a terrible idea. -->
 
-  <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="Ongoing-Projects">
-    <h1 class="w3-jumbo"><b>MIT Student Council</b></h1>
-    <h1 class="w3-xxxlarge w3-text-red"><b>Ongoing-Projects.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-  </div>
-  
-  <!-- Photo grid (modal) -->
-  <div class="w3-row-padding">
-    <div class="w3-half">
-      <img src="images/WinningT-ShirtDesign.jpg" style="width:100%" onclick="onClick(this)" alt="MIT Apparel - Winning Design">
-      <img src="images/Placeholderimage.jpg" style="width:100%" onclick="onClick(this)" alt="">
-    </div>
-	
-    <div class="w3-half">
-      <img src="images/Placeholderimage.jpg" style="width:100%" onclick="onClick(this)" alt="">
-      <img src="images/Placeholderimage.jpg" style="width:100%" onclick="onClick(this)" alt="">
-    </div>
-  </div>
+    <script id="testNav">sharedResource('#testNav', 'nav.html');</script>
 
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>
+    <!-- End Navigation for Re-Use -->
 
-  <!-- Services -->
-  <div class="w3-container" id="services" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Test Services.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Ensure tertiary students are well represented and supported across the wider Manukau Institute of Technology and local students, organisations, who are influential, visible, principled, well-resourced and informed.</p>
-    <p><ul><li>Encourage world-class learning and teaching practices.</li>
-	<li>Promote outstanding student experiences and learning environments.<br></li>
-	<li>Develop adequate levels of student support.<br></li>
-	<li>Ensure there are no unfair barriers to education.<br></li>
-	<li>Promote equitable access and support for achievement.<br></li>
-	<li>Ensure students are valued members of an academic community that contributes to the creation and dissemination of knowledge.</li>
-    </ul></p>
-  </div>
-  
-  <!-- Members -->
-  <div class="w3-container" id="Members" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Student Council Full Members.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Student Council Representives chosen by a selection committee</p>
-    <p><b>Our Members are thoughtfully chosen</b>:</p>
-  </div>
+    <div id="mainBody" class="col-lg-10 col-md-10 col-sm-12 col-xs-12 pull-right container">
 
-  <!-- The Team -->
-	<div class="w3-row-padding w3-grayscale">
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Earl.jpg" alt="Laurence Earl" style="width:100%">
-        <div class="w3-container">
-          <h3>Laurence Earl</h3>
-          <p class="w3-opacity">Chairperson and Academic Board Rep</p>
-          <p>P:0212660312</p>
-		  <p>E:earl26@manukaumail.com</p>
+      <div id="col1" class="col-sm-12 col-md-12 col-lg-12">
+        <h1>MIT Student Council</h1>
+        <h2>Our Goals</h2>
+        <p>
+          Ensure that students are well represented and supported across the wider Manukau Institute of Technology. We aim to support the delivery of:
+          <ul>
+            <li>Encourage world-class learning and teaching practices.</li>
+            <li>Promote outstanding student experiences and learning environments.</li>
+            <li>Develop adequate levels of student support.</li>
+            <li>Ensure there are no unfair barriers to education.</li>
+            <li>Promote equitable access and support for achievement.</li>
+            <li>Ensure students are valued members of an academic community that contributes to the creation and dissemination of knowledge.</li>
+          </ul>
+        </p>
+        <h2>Our Values & Priorities</h2>
+        <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+          <h3>Develop leaders</h3>
+
+          Foster strong relationships within student bodies (Student Council and Student Executive
+          Voice); coaching and developing members to create influential and effective leadership
+          amongst the student population
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+          <h3>
+            Deliver the message
+          </h3>
+
+          Ensure effective representation is maintained with the highest level of professionalism
+          and communication. Be transparent; communicate the student voice directly to the
+          institute and back again. Turn up to all meetings and being an active participant.
+          Developing tools to measure feedback channels to ensure needs are being met
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+          <h3>
+            Be the change
+          </h3>
+
+          Valuing diversity and fostering a more positive and motivated culture within the student
+          population through effective student engagement. Create a strong sense of identity and
+          relatedness, where students are proud to be part of Manukau Institute of Technology
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+          <h3>Bridge the gap</h3>
+
+          Establish effective working relationships with institute staff members; working
+          collaboratively to help MIT achieve their strategic goals. Act in the Interest of All Manukau
+          Institute of Technology Students, with focus on Priority groups providing students the
+          opportunities to engage about decisions effecting them
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+          <h3>Be Kind, Be Real, Be There</h3>
+
+          Know your students and know their struggle. Be genuine and support them through their
+          learning experience and life in general. Offer them the right support, guide them to the
+          right places and do everything you can to help them succeed
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+          <h3>Own it</h3>
+
+          Take ownership of issues, follow up and deliver
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6">
+          <h3>Build it</h3>
+
+          Build sustainable models focusing on social, economic, environmental and personal
+          change
         </div>
       </div>
-    </div>
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Placeholderimage.jpg" alt="Aayla Peebles" style="width:100%">
-        <div class="w3-container">
-          <h3>Aayla Peebles</h3>
-          <p class="w3-opacity">Deputy Chair and Academic Board Rep</p>
-          <p>P:</p>
-		  <p>E:@manukaumail.com</p>
-        </div>
+
+      <!-- The Calendar has not been implemented in this assignment submission. -->
+      <div id="col2" class="col-sm-12 col-md-12 col-lg-6">
+        <h2>Events Calendar</h2>
+        <!--
+        <p>
+            Maybe Implement this down the Track.
+
+            <a href="https://github.com/zabuto/calendar">
+            Zabuto's Calendar Plugin - jQuery Plugin for Bootstrap
+          </a>
+        </p>
+        -->
+        <iframe id="calendarEmbed"
+                src="https://calendar.google.com/calendar/embed?title=Student%20Council%20Events%20Calendar&amp;showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;hl=en_GB&amp;bgcolor=%23ffffff&amp;src=g.manukau.ac.nz_0euvalnjr4l30qmle48qttd6b4%40group.calendar.google.com&amp;color=%23dd1122&amp;ctz=Pacific%2FAuckland"
+                style="border-width:0;width:100%;height:500px;"
+                frameborder="0"
+                scrolling="no"></iframe>
       </div>
-    </div>
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Placeholderimage.jpg" alt="Kirsten Jury" style="width:100%">
-        <div class="w3-container">
-          <h3>Kirsten Jury</h3>
-          <p class="w3-opacity">Secretary</p>
-          <p>P:</p>
-		  <p>E:@manukaumail.com</p>
+
+      <div id="col3" class="col-sm-12 col-md-12 col-lg-6">
+        <h2>Notable Events</h2>
+        <h3>O-Week: 25-27 July</h3>
+        <img src="img/OWeek.jpg" alt="O-Week Banner. " />
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6">
+          <h4>MIT Manukau</h4>
+          <p>
+            Tuesday 25 July<br />11:30am - 1pm
+          </p>
         </div>
-      </div>
-    </div>
-  </div>
-    <div class="w3-row-padding w3-grayscale">
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Placeholderimage.jpg" alt="Jessica Petersen" style="width:100%">
-        <div class="w3-container">
-          <h3>Jessica Petersen</h3>
-          <p class="w3-opacity">Full Member - Student Voice U25 Rep</p>
-          <p>P:</p>
-		  <p>E:@manukaumail.com</p>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6">
+          <h4>MIT Otara South</h4>
+          <p>
+            Wednesday 26 July<br />11:30am - 1pm
+          </p>
         </div>
-      </div>
-    </div>
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Placeholderimage.jpg" alt="Connor McCormick" style="width:100%">
-        <div class="w3-container">
-          <h3>Connor McCormick</h3>
-          <p class="w3-opacity">Full Member - Student Voice LGBT</p>
-          <p>P:</p>
-		  <p>E:@manukaumail.com</p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Placeholderimage.jpg" alt="Gurdeep Singh" style="width:100%">
-        <div class="w3-container">
-          <h3>Gurdeep Singh</h3>
-          <p class="w3-opacity">Full Member - Student Voice FOBIT</p>
-          <p>P:</p>
-		  <p>E:@manukaumail.com</p>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6">
+          <h4>MIT Otara North</h4>
+          <p>
+            Thursday 27 July<br />11:30am - 1pm
+          </p>
         </div>
       </div>
     </div>
   </div>
-    <div class="w3-row-padding w3-grayscale">
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Placeholderimage.jpg" alt="Chrissy Bell" style="width:100%">
-        <div class="w3-container">
-          <h3>Chrissy Bell</h3>
-          <p class="w3-opacity">Full Member</p>
-          <p>P:</p>
-		  <p>E:@manukaumail.com</p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Placeholderimage.jpg" alt="Meliana Ngata" style="width:100%">
-        <div class="w3-container">
-          <h3>Meliana Ngata</h3>
-          <p class="w3-opacity">Full Member</p>
-          <p>P:</p>
-		  <p>E:@manukaumail.com</p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-light-grey">
-        <img src="images/Placeholderimage.jpg" alt="Tasha Hohia" style="width:100%">
-        <div class="w3-container">
-          <h3>Tasha Hohia</h3>
-          <p class="w3-opacity">Support Staff</p>
-          <p>P:</p>
-		  <p>E:@manukaumail.com</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Services -->
-  <div class="w3-container" id="Minutes" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Minutes.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>The Student Council strives to be open and honest with all Students</p>
-    <p>Below are the finalised minutes and agendas.</p>
-	<a href="/Documents_for_Download\Test_File_1.docx" download="Test File">Minutes April 2017 Confirmed</a><br>
-	<a href="/Documents_for_Download\Test_File_2.docx" download="Test File">Minutes May 2017 Confirmed</a><br>
-	<a href="/Documents_for_Download\Test_File_3.docx" download="Test File">Minutes June 2017 Confirmed</a><br>
-	<a href="/Documents_for_Download\Test_File_4.docx" download="Test File">Minutes July 2017 Confirmed</a>
-
-</a>
-  </div>
-
-  <!-- Contact -->
-  <div class="w3-container" id="contact" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Contact Us.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>MIT Student Council - Feedback and Opinion form</p>
-    <form action="/action_page.php" target="_blank">
-      <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">
-        <label>Email</label>
-        <input class="w3-input w3-border" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <input class="w3-input w3-border" type="text" name="Message" required>
-      </div>
-      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
-    </form>  
-  </div>
-
-<!-- End page content -->
-</div>
-
-<!-- W3.CSS Container -->
-<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Authorised by MIT Student Council</p></div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-</script>
-
 </body>
 </html>

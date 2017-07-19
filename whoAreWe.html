@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Who Are We - Student Council</title>
+
+  <!-- Imports: JQuery, Bootstrap, Font-Awesome, Poppins (Google Fonts), Favicon -->
+  <script src="scripts/jquery-3.1.1.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <link href="content/bootstrap.min.css" rel="stylesheet" />
+  <link href="content/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <link type="text/css" rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload="onLoad()">
+  <div id="container">
+
+    <!-- Look into better way of handling Reusable code. Client-Side XSS is a terrible idea. -->
+
+    <script id="testNav">sharedResource('#testNav', 'nav.html');</script>
+
+    <!-- End Navigation for Re-Use -->
+
+    <div id="mainBody" class="col-lg-10 col-md-10 col-sm-12 col-xs-12 pull-right container">
+      <div id="col1" class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Student Council Members</h1>
+        <h2>Foreword</h2>
+        <p>
+          The Members are of the MIT Student Council are interviewed and selected by a Selection Committee.<br/>
+          Below, You'll find the list of Members for each student council, year by year.
+        </p>
+        <!-- Backend Suggestion: PHP or Asp. Store in DB Tables. -->
+        <div id="membersContainer">
+        </div>
+        <!-- Since only Front-End Technologies are available - Generate the Members list based on a given JSON file.-->
+        <script>retrieveMembers();</script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

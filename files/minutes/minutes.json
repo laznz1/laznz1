@@ -8,22 +8,22 @@
     "June":{
       "Start Time":  "2017-06-14T05:00:00.000Z",
       "End Time":    "2017-06-14T07:00:00.000Z",
-      "formats":    ["docx","pdf"]
+      "formats":    ["pdf"]
     },
     "May":{
       "Start Time":  "2017-05-10T05:00:00.000Z",
       "End Time":    "2017-05-10T07:00:00.000Z",
-      "formats":    ["docx","pdf"]
+      "formats":    ["pdf"]
     },
     "April - Digital Meeting":{
       "Start Time":  "2017-04-22T10:23:00.000Z",
       "End Time":    "2017-04-23T04:50:00.000Z",
-      "formats":    ["docx","pdf"]
+      "formats":    ["pdf"]
     },
     "April":{
       "Start Time":  "2017-04-12T05:00:00.000Z",
       "End Time":    "2017-04-12T07:00:00.000Z",
-      "formats":    ["docx","pdf"]
+      "formats":    ["pdf"]
     }
   }
 }

@@ -123,6 +123,7 @@ h3 {
         padding-left: 15px;
         padding-right: 15px;
         cursor: pointer;
+        display: block;
     }
 
     #navSide h1 {
@@ -192,6 +193,8 @@ h3 {
         margin-right: auto;
         width: auto;
         max-width: 100%;
+        filter: grayscale(80%);
+        -webkit-filter: grayscale(80%);
     }
 
     .memberBlock h4 {
@@ -311,3 +314,9 @@ h3 {
     .carousel .carousel-indicators li {
         box-shadow: #666666 0 0 1px 1px;
     }
+pre {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    white-space: pre;
+
+}
